@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image gellary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gellary-wrap">
+        <img src="img/back.png" alt="back" id="backbtn">
+
+        <div class="image-gellary">
+            <div>
+                <img src="img/image-1.png" alt="">
+                <img src="img/image-2.png" alt="">
+                <img src="img/image-3.png" alt="">
+            </div>
+            <div>
+                <img src="img/image-4.png" alt="">
+                <img src="img/image-5.png" alt="">
+                <img src="img/image-6.png" alt="">
+            </div>
+        </div>
+
+        <img src="img/next.png" alt="next" id="nextbtn">
+    </div>
+   <script>
+    var imgGellery=document.querySelector(".image-gellary");
+    var backBtn=document.getElementById("backbtn");
+    var nextBtn=document.getElementById("nextbtn");
+
+    imgGellery.addEventListener("wheel",function(event){
+        event.preventDefault();
+        imgGellery.scrollLeft+=event.deltaY;
+    })
+
+    nextBtn.addEventListener("click",function(){
+        imgGellery.style.scrollBehavior="smooth";
+        imgGellery.scrollLeft+=900;
+    })
+
+    backBtn.addEventListener("click",function(){
+        imgGellery.style.scrollBehavior="smooth";
+        imgGellery.scrollLeft-=900;
+    })
+
+
+   </script>
+    
+</body>
+</html>
